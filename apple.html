@@ -1,0 +1,277 @@
+<!doctype html>
+<html lang="ko">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>자율주행 사과수확 보조 운반 및 선별 로봇 | Seong wook Son</title>
+    <link rel="icon" href="favicon.svg" />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <a class="skip" href="#content">본문으로 이동</a>
+    <div class="shell">
+      <aside class="profile">
+        <a class="identity" href="index.html"
+          ><strong>손성욱</strong><span>Seong wook Son</span></a
+        >
+        <p>경북대학교<br />생물산업기계공학 전공</p>
+        <p>KDT 15기<br />AI·빅데이터 교육</p>
+        <nav aria-label="프로젝트">
+          <a href="index.html">Projects</a
+          ><a href="apple.html">자율주행 사과수확 보조 운반 및 선별 로봇</a
+          ><a href="process.html">벼 건조·저장시설</a
+          ><a href="education.html">AI·빅데이터 교육</a>
+        </nav>
+      </aside>
+      <main id="content">
+        <article id="apple" class="detail">
+          <p class="eyebrow">01 / Capstone Design</p>
+          <h1>자율주행 사과수확 보조 운반 및 선별 로봇</h1>
+          <p class="lead">
+            사과의 손상과 작업자의 반복적인 운반 부담을 줄이기 위한 수확 보조
+            로봇을 구상했습니다.
+          </p>
+          <section class="overview">
+            <h2>프로젝트 개요</h2>
+            <p>
+              사과를 투입하고 미러돔 촬영으로 정과·흠과를 구분한 뒤, 중량에 따라
+              대·중·소·흠과로 분류하는 구조입니다. 네 종류의 적재함으로 사과를
+              내려 하역하고, 이송로봇이 창고로 운반한 뒤 복귀하도록
+              계획했습니다.
+            </p>
+            <p>
+              하드웨어와 소프트웨어를 나눠 진행한 팀 프로젝트이며, 3D 설계와
+              하드웨어 제작을 거쳐 특허를 출원했습니다.
+            </p>
+          </section>
+          <figure>
+            <a
+              href="assets/robot.webp"
+              aria-label="로봇 전체 구조 도면 크게 보기"
+              ><img
+                src="assets/robot.webp"
+                alt="상부 투입·선별 장치, 하부 박스 공급 컨베이어와 이송로봇을 연결한 전체 구조"
+                width="903"
+                height="525"
+            /></a>
+            <figcaption>팀 산출물 · 특허 출원 도면 / 전체 설계 구조</figcaption>
+          </figure>
+          <section class="overview">
+            <h2>제가 한 일</h2>
+            <div class="detail-grid">
+              <section>
+                <h3>구조 구상</h3>
+                <p>
+                  엘리베이터·셔터를 이용한 하강·하역, 빈 박스 공급, 이송로봇의
+                  도킹·복귀 연계를 제안했습니다. 최종 출원 구조에도 제
+                  아이디어가 반영됐습니다.
+                </p>
+              </section>
+              <section>
+                <h3>모델링과 조립</h3>
+                <p>
+                  Inventor로 컨베이어 초기 모델을 만들었으며 팀원의 수정을 거쳐
+                  보완했습니다. 2축 팬틸트 플레이트와 이송로봇 조립에
+                  참여했습니다.
+                </p>
+              </section>
+            </div>
+          </section>
+          <section class="overview" id="prototype">
+            <h2>제작과 구동 기록</h2>
+            <div class="prototype-photos">
+              <figure>
+                <a
+                  class="photo-stage quarter-turn"
+                  href="assets/capstone-tilt-assembly.jpg"
+                  aria-label="팬틸트 조립 원본 사진 보기"
+                  ><img
+                    src="assets/capstone-tilt-assembly.jpg"
+                    alt="플레이트와 서보모터, 제어 배선을 조립한 팬틸트 장치"
+                    loading="lazy"
+                    width="1644"
+                    height="1233"
+                /></a>
+                <figcaption>팀 제작 기록 · 2축 팬틸트</figcaption>
+              </figure>
+            </div>
+            <p>
+              이송로봇을 단독으로 구동해 상자를 실은 상태의 이동을 확인했습니다.
+              제작 과정에서는 상자를 받는 부분의 안정성을 검토하고, 팀에서
+              적재부 구조를 수정했습니다.
+            </p>
+            <div class="video-pair">
+              <figure>
+                <video
+                  controls
+                  playsinline
+                  muted
+                  preload="none"
+                  poster="assets/capstone-transport-loaded-poster.jpg"
+                  width="720"
+                  height="1280"
+                  aria-label="상자를 실은 이송로봇 구동 영상"
+                  aria-describedby="loaded-video-caption"
+                >
+                  <source
+                    src="assets/capstone-transport-loaded.mp4"
+                    type="video/mp4"
+                  />
+                  영상을 재생할 수 없습니다.
+                  <a href="assets/capstone-transport-loaded.mp4"
+                    >영상 파일 열기</a
+                  >
+                </video>
+                <figcaption id="loaded-video-caption">
+                  상자를 실은 주행 · 13초<br />팀 구동 기록 / 11월 24일 발표자료
+                  5쪽
+                </figcaption>
+                <a
+                  class="media-link"
+                  href="assets/capstone-transport-loaded.mp4"
+                  >영상 파일 열기</a
+                >
+              </figure>
+              <figure>
+                <video
+                  controls
+                  playsinline
+                  muted
+                  preload="none"
+                  poster="assets/capstone-transport-motion-poster.jpg"
+                  width="720"
+                  height="1280"
+                  aria-label="이송로봇 단독 이동 시험 영상"
+                  aria-describedby="motion-video-caption"
+                >
+                  <source
+                    src="assets/capstone-transport-motion.mp4"
+                    type="video/mp4"
+                  />
+                  영상을 재생할 수 없습니다.
+                  <a href="assets/capstone-transport-motion.mp4"
+                    >영상 파일 열기</a
+                  >
+                </video>
+                <figcaption id="motion-video-caption">
+                  이송로봇 이동 시험 · 12초<br />팀 구동 기록 / 최종 발표자료
+                  25쪽
+                </figcaption>
+                <a
+                  class="media-link"
+                  href="assets/capstone-transport-motion.mp4"
+                  >영상 파일 열기</a
+                >
+              </figure>
+            </div>
+            <p class="note">
+              영상은 이송로봇의 개별 동작 시험입니다. 본체와의 연동,
+              선별·적재·하역을 연결한 전체 자동 운전은 완료하지 못했습니다.
+            </p>
+          </section>
+
+          <section class="overview" id="manual-box-alternative">
+            <h2>설계 과정 · 빈 박스를 어떻게 공급할까?</h2>
+            <p>
+              가득 찬 박스를 내보낸 뒤 다음 사과를 받아줄 빈 박스가
+              필요했습니다. 작업자와 로봇의 역할을 고려해 여러 공급 방식을
+              검토했습니다.
+            </p>
+            <figure>
+              <a
+                href="assets/boxes.webp"
+                aria-label="빈 박스 공급과 하역 구조 도면 크게 보기"
+                ><img
+                  src="assets/boxes.webp"
+                  alt="왼쪽의 빈 박스 공급 장치에서 하부 컨베이어를 거쳐 오른쪽 적재·하역부와 이송로봇으로 연결되는 구조"
+                  loading="lazy"
+                  width="903"
+                  height="569"
+              /></a>
+              <figcaption>
+                팀 출원 도면 · 제가 제안한 빈 박스 공급과 하강·하역의 연결을
+                포함한 최종 구조
+              </figcaption>
+            </figure>
+            <div class="detail-grid">
+              <section>
+                <h3>작업자가 직접 교체하는 안</h3>
+                <p>
+                  로봇이 작업자를 추종한다는 전제에서, 빈 박스를 기체에 겹쳐
+                  싣고 사람이 교체하는 방안입니다. 창고에서 빈 박스를 자동
+                  보충하는 절차를 줄이려는 구상이었습니다.
+                </p>
+              </section>
+              <section>
+                <h3>자동으로 공급하는 안</h3>
+                <p>
+                  리프트·셔터·액추에이터로 박스를 순환시키는 구조를
+                  구상했습니다. 공간과 로봇 연동의 복잡성을 검토하고, 투입
+                  박스와 하부 컨베이어를 연결하는 방향으로 발전시켰습니다.
+                </p>
+              </section>
+            </div>
+            <figure>
+              <a
+                href="assets/capstone-manual-box-note.png"
+                aria-label="빈 박스 수동 교체 원본 메모 보기"
+                ><img
+                  src="assets/capstone-manual-box-note.png"
+                  alt="투입·선별·적재·운반 배치와 작업자 추종을 전제로 한 빈 박스 수동 교체 대안 스케치"
+                  loading="lazy"
+                  width="1197"
+                  height="1300"
+              /></a>
+              <figcaption>
+                설계 메모 · 6월 8일 / 롤러 배치와 전자기식 결합, 암수
+                맞물림·슬롯·걸쇠도 함께 검토했습니다. 그림을 누르면 원본을 볼 수
+                있습니다.
+              </figcaption>
+            </figure>
+            <p>
+              수동 교체는 검토한 대안이며 최종 채택을 의미하지 않습니다. 적재할
+              빈 박스가 충분한지, 교체에 얼마나 걸리는지는 검증하지 못했습니다.
+            </p>
+            <details>
+              <summary>추가 설계 스케치</summary>
+              <div class="detail-grid">
+                <figure>
+                  <img
+                    src="assets/capstone-box-study.webp"
+                    alt="수직 리프트와 수평 이동을 조합한 빈 박스 공급 대안"
+                    loading="lazy"
+                  />
+                  <figcaption>빈 박스 공급 대안 · 4월 10일</figcaption>
+                </figure>
+                <figure>
+                  <img
+                    src="assets/capstone-layout-study.webp"
+                    alt="앞·위·옆에서 검토한 모듈 연결과 개략 배치"
+                    loading="lazy"
+                  />
+                  <figcaption>모듈 연결과 개략 배치 · 6월 7일</figcaption>
+                </figure>
+              </div>
+            </details>
+          </section>
+          <section class="overview">
+            <h2>결과와 배운 점</h2>
+            <p>
+              팀에서 2축 팬틸트 플레이트와 이송로봇의 개별 동작을 확인했습니다.
+              본체와 로봇의 연동, 적재부 등 나머지 모듈의 작동과 전체 성능
+              검증은 완료하지 못했습니다.
+            </p>
+            <p>
+              개략 배치와 구조 연결을 구체화하는 과정에서, 실제 장비로
+              이어지려면 치수·간섭 검토와 제어 연동, 단계별 시험 계획이 함께
+              필요하다는 점을 배웠습니다.
+            </p>
+            <p class="note">산출물: 팀 3D 설계 · 하드웨어 제작 · 특허 출원</p>
+          </section>
+          <a class="back" href="index.html">프로젝트 목록으로</a>
+        </article>
+        <footer>Seong wook Son · Portfolio</footer>
+      </main>
+    </div>
+  </body>
+</html>

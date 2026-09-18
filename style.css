@@ -1,0 +1,875 @@
+:root {
+  --ink: #343a3e;
+  --muted: #747b80;
+  --accent: #587d83;
+  --line: #e7e9ea;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  background: #fff;
+  color: var(--ink);
+  font:
+    16px/1.8 "Apple SD Gothic Neo",
+    "Malgun Gothic",
+    sans-serif;
+  word-break: keep-all;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 5px;
+}
+
+.skip {
+  position: absolute;
+  top: -80px;
+  background: white;
+  padding: 12px;
+}
+
+.skip:focus {
+  top: 0;
+  z-index: 10;
+}
+
+/* =========================
+   Layout
+   ========================= */
+
+.shell {
+  max-width: 1140px;
+  margin: auto;
+  display: grid;
+  grid-template-columns: 215px minmax(0, 1fr);
+  gap: 65px;
+  padding: 62px 35px 25px;
+}
+
+/* =========================
+   Profile / Sidebar
+   ========================= */
+
+.profile {
+  position: sticky;
+  top: 62px;
+  align-self: start;
+}
+
+.identity strong {
+  display: block;
+  font-size: 25px;
+  font-weight: 600;
+  line-height: 1.4;
+}
+
+.identity span {
+  font-size: 15px;
+  color: var(--muted);
+}
+
+.profile-info {
+  display: grid;
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.profile-info p {
+  margin: 0;
+  font-size: 14px;
+  color: var(--muted);
+  line-height: 1.75;
+}
+
+.profile nav {
+  display: grid;
+  gap: 10px;
+  border-top: 1px solid var(--line);
+  padding-top: 24px;
+  margin-top: 30px;
+}
+
+.profile nav a {
+  font-size: 14px;
+  color: #626b70;
+}
+
+.profile nav a:first-child,
+.profile nav .nav-title {
+  font-weight: 600;
+  color: var(--ink);
+}
+
+.profile nav a:hover,
+.back:hover {
+  color: var(--accent);
+}
+
+/* =========================
+   Main
+   ========================= */
+
+main {
+  min-width: 0;
+}
+
+.heading {
+  margin-bottom: 27px;
+}
+
+h1 {
+  font-size: 29px;
+  line-height: 1.45;
+  letter-spacing: -0.035em;
+  margin: 0 0 12px;
+  font-weight: 500;
+}
+
+.heading > p {
+  font-size: 16px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* =========================
+   Project Index
+   ========================= */
+
+.projects {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 35px 26px;
+}
+
+.project {
+  min-width: 0;
+}
+
+.thumb {
+  height: 208px;
+  background: #f6f7f7;
+  border-radius: 3px;
+  padding: 14px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+}
+
+.thumb img {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  mix-blend-mode: multiply;
+  transition: transform 0.2s;
+}
+
+.project:hover img {
+  transform: scale(1.025);
+}
+
+.eyebrow {
+  font-size: 12px;
+  letter-spacing: 0.05em;
+  color: var(--muted);
+  margin: 16px 0 4px;
+}
+
+.project h2 {
+  font-size: 19px;
+  font-weight: 500;
+  margin: 0 0 7px;
+  line-height: 1.5;
+}
+
+.project > p:last-child {
+  color: var(--muted);
+  font-size: 14px;
+  margin: 0;
+}
+
+/* KDT / Education image */
+.project.education .thumb img {
+  object-fit: contain;
+}
+
+.education-thumb {
+  align-items: flex-start;
+  flex-direction: column;
+  padding: 25px;
+  background: #f0f3f4;
+  color: #506972;
+}
+
+.education-thumb span,
+.education-thumb small {
+  font-size: 12px;
+}
+
+.education-thumb strong {
+  font-size: 23px;
+  line-height: 1.55;
+  font-weight: 500;
+  margin: 15px 0;
+}
+
+/* =========================
+   Detail Pages
+   ========================= */
+
+.detail > .eyebrow {
+  margin-top: 0;
+}
+
+.lead {
+  font-size: 17px;
+  color: var(--muted);
+  margin: 20px 0 30px;
+}
+
+h2 {
+  font-size: 21px;
+  font-weight: 500;
+  line-height: 1.5;
+  margin: 0 0 15px;
+}
+
+h3 {
+  font-size: 17px;
+  font-weight: 600;
+  margin: 0 0 10px;
+}
+
+.overview {
+  margin: 30px 0;
+}
+
+.overview p,
+.detail-grid p {
+  margin: 0 0 15px;
+  color: #60696f;
+}
+
+.detail-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px 28px;
+  margin: 30px 0;
+}
+
+.detail-grid section {
+  min-width: 0;
+}
+
+/* =========================
+   Figures
+   ========================= */
+
+figure {
+  margin: 30px 0;
+}
+
+figure img {
+  display: block;
+  width: 100%;
+  max-height: 400px;
+  object-fit: contain;
+  background: #f8f9f9;
+  padding: 14px;
+}
+
+figcaption {
+  font-size: 12px;
+  color: var(--muted);
+  margin-top: 10px;
+}
+
+/* =========================
+   Facts
+   ========================= */
+
+.facts {
+  display: flex;
+  justify-content: space-between;
+  border-block: 1px solid var(--line);
+  padding: 17px 0;
+  gap: 12px;
+}
+
+.facts strong {
+  font-size: 27px;
+  font-weight: 500;
+}
+
+.facts span {
+  font-size: 13px;
+  margin-left: 5px;
+}
+
+.facts p {
+  font-size: 13px;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* =========================
+   Notes / Back
+   ========================= */
+
+.note {
+  font-size: 13px;
+  color: var(--muted);
+  border-left: 2px solid #d5dfe1;
+  padding: 8px 0 8px 15px;
+  margin: 24px 0;
+}
+
+.back {
+  display: inline-block;
+  font-size: 14px;
+  border-bottom: 1px solid var(--line);
+  padding-bottom: 4px;
+  margin-top: 18px;
+}
+
+/* =========================
+   Table
+   ========================= */
+
+.table-wrap {
+  overflow-x: auto;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+  font-size: 14px;
+  text-align: right;
+}
+
+caption {
+  text-align: left;
+  color: var(--muted);
+  font-size: 13px;
+  margin-bottom: 10px;
+}
+
+th,
+td {
+  padding: 11px 8px;
+  border-bottom: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+thead {
+  background: #f5f7f7;
+}
+
+th:first-child {
+  text-align: left;
+}
+
+/* =========================
+   SQL / Definition
+   ========================= */
+
+.sql {
+  border-top: 1px solid var(--line);
+  padding-top: 30px;
+  margin-top: 40px;
+}
+
+dt {
+  font-size: 14px;
+  font-weight: 600;
+  margin-top: 16px;
+}
+
+dd {
+  margin: 5px 0 0;
+  color: var(--muted);
+}
+
+.formula {
+  font-size: 14px;
+  border-top: 1px solid var(--line);
+  padding-top: 12px;
+}
+
+/* =========================
+   Footer
+   ========================= */
+
+footer {
+  margin-top: 55px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  font-size: 12px;
+  color: #91979a;
+}
+
+/* =========================
+   Sample Pair
+   ========================= */
+
+.sample-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 20px;
+  max-width: 520px;
+  margin: 22px 0;
+}
+
+.sample-pair figure {
+  margin: 0;
+}
+
+.sample-pair img {
+  max-height: 235px;
+  padding: 0;
+  background: none;
+}
+
+.sample-pair figcaption {
+  margin-top: 6px;
+}
+
+/* =========================
+   Work Log
+   ========================= */
+
+.work-log {
+  margin-top: 24px;
+}
+
+.work-log dt {
+  font-size: 16px;
+  border-top: 1px solid var(--line);
+  padding-top: 18px;
+  margin-top: 22px;
+}
+
+.work-log dd {
+  font-size: 16px;
+  color: #60696f;
+  margin-top: 8px;
+}
+
+.work-log code {
+  font-size: 14px;
+  background: #f0f3f4;
+  padding: 2px 5px;
+  border-radius: 3px;
+}
+
+/* =========================
+   Details
+   ========================= */
+
+details {
+  margin: 22px 0;
+  border-block: 1px solid var(--line);
+  padding: 13px 0;
+}
+
+summary {
+  font-size: 15px;
+  color: var(--ink);
+  cursor: pointer;
+  padding: 3px 0;
+}
+
+summary:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+
+details[open] > summary {
+  margin-bottom: 18px;
+}
+
+details .note {
+  margin-bottom: 8px;
+}
+
+details figure {
+  margin-top: 12px;
+}
+
+/* =========================
+   Demo Figure
+   ========================= */
+
+.demo-figure {
+  max-width: 690px;
+}
+
+.demo-figure img {
+  max-height: none;
+  height: auto;
+  padding: 0;
+  background: none;
+  border: 1px solid var(--line);
+}
+
+/* =========================
+   Capstone Photos
+   ========================= */
+
+.prototype-photos {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr);
+  max-width: 340px;
+  gap: 16px;
+  margin: 22px 0 26px;
+}
+
+.prototype-photos figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.photo-stage {
+  display: block;
+  aspect-ratio: 4 / 3;
+  overflow: hidden;
+  background: #f6f7f7;
+  border-radius: 3px;
+}
+
+.photo-stage img {
+  width: 100%;
+  height: 100%;
+  max-height: none;
+  padding: 0;
+  object-fit: contain;
+  background: none;
+}
+
+.photo-stage.quarter-turn img {
+  transform: rotate(90deg) scale(0.75);
+}
+
+.prototype-photos figcaption {
+  font-size: 13px;
+  line-height: 1.6;
+}
+
+/* =========================
+   Video
+   ========================= */
+
+.video-pair {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 22px;
+  max-width: 500px;
+  margin: 24px 0;
+}
+
+.video-pair figure {
+  margin: 0;
+  min-width: 0;
+}
+
+.video-pair video {
+  display: block;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 9 / 16;
+  background: #f4f5f5;
+  border-radius: 3px;
+}
+
+.video-pair figcaption {
+  font-size: 13px;
+  line-height: 1.65;
+}
+
+.media-link {
+  display: inline-block;
+  font-size: 14px;
+  color: var(--accent);
+  border-bottom: 1px solid var(--line);
+  margin-top: 8px;
+}
+
+.video-pair video:focus-visible {
+  outline: 3px solid var(--accent);
+  outline-offset: 4px;
+}
+
+/* =========================
+   Tablet
+   ========================= */
+
+@media (max-width: 900px) {
+  .shell {
+    grid-template-columns: 170px minmax(0, 1fr);
+    gap: 35px;
+    padding: 40px 25px;
+  }
+
+  .profile {
+    top: 40px;
+  }
+
+  .thumb {
+    height: 175px;
+  }
+
+  .education-thumb strong {
+    font-size: 20px;
+  }
+
+  .detail-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+/* =========================
+   Mobile
+   ========================= */
+
+@media (max-width: 620px) {
+  .shell {
+    display: block;
+    padding: 28px 22px;
+  }
+
+  .profile {
+    position: static;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 8px 18px;
+    border-bottom: 1px solid var(--line);
+    padding-bottom: 20px;
+    margin-bottom: 25px;
+  }
+
+  .identity {
+    grid-column: 1;
+    grid-row: 1;
+  }
+
+  .identity strong {
+    font-size: 24px;
+  }
+
+  .profile-info {
+    grid-column: 2;
+    grid-row: 1;
+    margin: 0;
+    gap: 6px;
+    align-self: start;
+  }
+
+  .profile-info p {
+    font-size: 12px;
+    line-height: 1.6;
+    margin: 0;
+  }
+
+  .profile nav {
+    grid-column: 1 / -1;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 7px 17px;
+    padding: 13px 0 0;
+    margin: 6px 0 0;
+    border: 0;
+  }
+
+  .profile nav a {
+    font-size: 14px;
+  }
+
+  .profile nav a:first-child,
+  .profile nav .nav-title {
+    display: none;
+  }
+
+  h1 {
+    font-size: 25px;
+  }
+
+  .projects {
+    gap: 25px 15px;
+  }
+
+  .thumb {
+    height: 150px;
+    padding: 10px;
+  }
+
+  .project h2 {
+    font-size: 17px;
+  }
+
+  .education-thumb {
+    padding: 13px;
+  }
+
+  .education-thumb strong {
+    font-size: 17px;
+    margin: 9px 0;
+  }
+
+  .detail-grid {
+    gap: 16px;
+  }
+
+  .facts strong {
+    font-size: 25px;
+  }
+
+  .facts span {
+    font-size: 12px;
+  }
+
+  figure img {
+    max-height: 300px;
+    padding: 7px;
+  }
+
+  .prototype-photos {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 15px;
+  }
+
+  .video-pair {
+    gap: 15px;
+  }
+
+  .video-pair figcaption {
+    font-size: 12px;
+  }
+}
+
+/* =========================
+   Small Mobile
+   ========================= */
+
+@media (max-width: 360px) {
+  .projects {
+    grid-template-columns: 1fr;
+  }
+
+  .thumb {
+    height: 200px;
+  }
+}
+
+/* =========================
+   Reduced Motion
+   ========================= */
+
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .thumb img {
+    transition: none;
+  }
+}
+/* =========================
+   INDEX project layout only
+   ========================= */
+
+.index-projects {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 38px 26px;
+}
+
+/* 대표 캡스톤 */
+.index-projects .featured-project {
+  grid-column: 1 / -1;
+  display: grid;
+  grid-template-columns: minmax(0, 1.3fr) minmax(300px, 1fr);
+  gap: 34px;
+  align-items: center;
+}
+
+.index-projects .featured-project .thumb {
+  height: 275px;
+}
+
+.index-projects .featured-project .eyebrow {
+  margin-top: 0;
+}
+
+.index-projects .featured-project h2 {
+  font-size: 24px;
+  line-height: 1.45;
+  margin-bottom: 10px;
+}
+
+.index-projects .featured-project .project-copy > p:last-child {
+  margin: 0;
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+}
+
+/* 하단 2개 카드 */
+.index-projects > .project:not(.featured-project) .thumb {
+  height: 205px;
+}
+
+/* INDEX에서는 교육 카드도 일반 카드처럼 */
+.index-projects .education {
+  display: block;
+  grid-column: auto;
+}
+
+/* 반응형 */
+@media (max-width: 900px) {
+  .index-projects .featured-project {
+    grid-template-columns: 1fr;
+    gap: 18px;
+  }
+
+  .index-projects .featured-project .thumb {
+    height: 230px;
+  }
+}
+
+@media (max-width: 620px) {
+  .index-projects {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .index-projects .featured-project {
+    grid-column: auto;
+    display: block;
+  }
+
+  .index-projects .featured-project .thumb,
+  .index-projects > .project:not(.featured-project) .thumb {
+    height: 210px;
+  }
+
+  .index-projects .featured-project .project-copy {
+    margin-top: 16px;
+  }
+
+  .index-projects .featured-project h2 {
+    font-size: 19px;
+  }
+}
