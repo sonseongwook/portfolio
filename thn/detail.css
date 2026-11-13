@@ -1,1 +1,9 @@
 :root{--accent:#174d8c;--ink:#17293c;--muted:#627182;--line:#dbe3eb}.profile{background:#173b65}.identity span,.profile-info p,.profile nav a,.profile nav a:first-child{color:#d2e1f1}.profile nav a[aria-current=page],.profile nav a:hover{color:white}.case-study h1{color:#173b65}.back{color:var(--accent)}
+
+@media(max-width:700px){
+ .profile .profile-info{display:block;margin:10px 0 0}
+ .profile .profile-info p:not(:last-child){display:none}
+ .profile .profile-info p:last-child{display:block;margin:0}
+ .profile .profile-info p:last-child a{font-size:12px;line-height:1.6}
+}
+#cable .table-wrap td,#chat-kdt .table-wrap td{white-space:nowrap}
