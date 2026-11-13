@@ -1,0 +1,245 @@
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>AI·빅데이터 프로젝트 | 손성욱 · THN 지원 포트폴리오</title><meta name="description" content="손성욱의 기구·공정 설계 및 데이터·AI 프로젝트 포트폴리오"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link rel="stylesheet" href="../portfolio.css"><link rel="stylesheet" href="detail.css"></head><body><a class="skip" href="#content">본문으로 이동</a><div class="shell"><aside class="profile">
+        <a class="identity" href="index.html"><strong>손성욱</strong><span>THN 지원 포트폴리오</span></a>
+        <div class="profile-info">
+          <p>경북대학교<br />생물산업기계공학 전공</p>
+          <p>KDT 15기<br />AI·빅데이터 교육</p>
+        </div>
+        <nav aria-label="프로젝트">
+          <a href="index.html">포트폴리오 요약</a>
+          <a href="apple.html">사과수확 보조 로봇</a>
+          <a href="process.html">벼 건조·저장시설</a>
+          <a href="enterprise.html">전동화 조립 공법 자동화</a>
+          <a href="education.html" aria-current="page">AI·빅데이터 프로젝트</a>
+        </nav>
+      </aside><main id="content"><article class="case-study" id="education"><header class="page-intro"><p class="eyebrow">TRAINING PROJECTS · DATA / AI</p><h1>AI·빅데이터 프로젝트</h1><p class="lead">교육 과정에서 진행한 이미지 분류와 제조 데이터 조회 프로젝트입니다. 실험 조건과 결과, 적용 범위를 함께 정리했습니다.</p><nav class="project-jump" aria-label="교육 프로젝트 바로가기"><a href="#cable">케이블 이미지 분류 ↓</a><a href="#chat-kdt">제조 데이터 조회 ↓</a></nav></header><div class="project-study" id="cable">          <section class="overview">
+            <h2>케이블 이미지 정상·불량 분류</h2><p class="project-meta"><span><time datetime="2026-08-14">2026.08.14</time> – <time datetime="2026-08-16">2026.08.16</time></span><span>4인 팀</span><span>개인 담당 · 기본 CNN 실험</span></p>
+            <p>
+              MVTec AD Cable의 케이블 단면 이미지를 정상·불량으로 판별하는 4인
+              팀 프로젝트입니다. 기본 CNN, 일반 증강 CNN, 정상 복원 기반
+              Autoencoder, EfficientNet-B0 전이학습을 분담해 비교했습니다.
+            </p>
+            <p>
+              공통 원본 분할은 학습 261장, 검증 56장, 테스트 57장입니다. 학습
+              방식에 따라 증강본 사용 여부와 입력 크기를 달리했습니다.
+            </p>
+          </section>
+          <div class="sample-pair">
+            <figure>
+              <img
+                src="../assets/cable-good.png"
+                alt="발표자료의 정상 케이블 단면 예시"
+                loading="lazy"
+              />
+              <figcaption>정상 예시</figcaption>
+            </figure>
+            <figure>
+              <img
+                src="../assets/cable-defect.png"
+                alt="발표자료의 불량 케이블 단면 예시"
+                loading="lazy"
+              />
+              <figcaption>불량 예시</figcaption>
+            </figure>
+          </div>
+          <section class="overview">
+            <h3>담당 역할 · 기본 CNN</h3>
+            <p>
+              기본 CNN 실험을 맡아 데이터셋을 찾고 라벨과 분할 구성을
+              점검했습니다. AI의 코드 작성 지원을 받아 모델을 구현·실행했으며,
+              실험 결과와 오분류 사례를 담당 발표자료로 정리했습니다.
+            </p>
+            <details>
+              <summary>데이터 구성과 실험 설정</summary>
+              <dl class="work-log">
+                <dt>데이터 구성 점검</dt>
+                <dd>
+                  처음 구한 데이터의 학습 폴더에는 정상 이미지만 있었습니다.
+                  정상·불량 이진 분류에 맞춰 원본을 다시 나눈 데이터에서 학습
+                  261장, 검증 56장, 테스트 57장과 각 클래스 수를 확인했습니다.
+                </dd>
+                <dt>기본 CNN 실험</dt>
+                <dd>
+                  증강 효과가 섞이지 않도록 미리 생성된 증강 이미지를
+                  제외했습니다. 정상 197장과 불량 64장을 사용했고, 불균형은
+                  손실함수의 불량 가중치 3.078로 보정했습니다. 입력은 RGB
+                  224×224, 모델은 사전학습 없는 4개 합성곱 블록으로
+                  구성했습니다.
+                </dd>
+                <dt>모델 선택과 평가</dt>
+                <dd>
+                  검증 불량 F1을 우선하고 동률이면 검증 손실을 비교해 모델을
+                  저장했습니다. 5회차 모델을 선택한 뒤 테스트 57장으로 평가하고,
+                  혼동행렬과 오분류 이미지를 확인했습니다.
+                </dd>
+              </dl>
+            </details>
+          </section>
+          <section class="overview">
+            <h3>개인 실험 결과</h3>
+            <p>
+              정확도는 <strong>77.19%</strong>, 불량 재현율은
+              <strong>50.00%</strong>, 불량 F1은
+              <strong>51.85%</strong>였습니다. 불량 14장 중 7장을 정상으로
+              판단했습니다. <strong>전체 정확도만으로는 불량 미검출을 충분히 설명할 수 없었습니다.</strong>
+            </p>
+            <div class="table-wrap">
+              <table>
+                <caption>
+                  기본 CNN의 테스트 혼동행렬 · 단위: 장
+                </caption>
+                <thead>
+                  <tr>
+                    <th>실제 / 예측</th>
+                    <th>정상 예측</th>
+                    <th>불량 예측</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr>
+                    <th>실제 정상</th>
+                    <td>37</td>
+                    <td>6</td>
+                  </tr>
+                  <tr>
+                    <th>실제 불량</th>
+                    <td>7</td>
+                    <td>7</td>
+                  </tr>
+                </tbody>
+              </table>
+            </div>
+          </section>
+          <section class="overview">
+            <h3>팀 실험 비교</h3>
+            <p>
+              네 가지 접근법을 같은 테스트 데이터에서 비교했습니다. 전체 비교
+              수치는 아래에서 확인할 수 있습니다.
+            </p>
+            <details>
+              <summary>모델별 결과 보기</summary>
+              <div class="table-wrap">
+                <table>
+                  <caption>
+                    통합 발표자료의 테스트 결과 · 정상 43장 / 불량 14장
+                  </caption>
+                  <thead>
+                    <tr>
+                      <th>접근</th>
+                      <th>정확도</th>
+                      <th>불량 재현율</th>
+                      <th>불량 F1</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <th>기본 CNN · 개인 담당</th>
+                      <td>77.19%</td>
+                      <td>50.00%</td>
+                      <td>51.85%</td>
+                    </tr>
+                    <tr>
+                      <th>CNN + 일반 증강</th>
+                      <td>85.96%</td>
+                      <td>57.14%</td>
+                      <td>66.67%</td>
+                    </tr>
+                    <tr>
+                      <th>Autoencoder*</th>
+                      <td>71.9%</td>
+                      <td>21.4%</td>
+                      <td>27.3%</td>
+                    </tr>
+                    <tr>
+                      <th>EfficientNet-B0</th>
+                      <td>92.98%</td>
+                      <td>71.43%</td>
+                      <td>83.33%</td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <p class="note">
+                * Autoencoder는 발표자료의 ‘90% Best F1’ 기준입니다. 기본 CNN은
+                원본 261장, 일반 증강 CNN은 불량 증강본 133장을 포함한 394장,
+                Autoencoder는 정상 197장으로 학습했습니다. 원본 분할과 평가
+                대상은 공통이며 모델별 학습 조건은 다릅니다.
+              </p>
+            </details>
+          </section>
+          <section class="overview">
+            <h3>결과와 한계</h3>
+            <p>
+              팀 비교에서 EfficientNet-B0는 정확도 92.98%, 불량 F1 83.33%로 가장
+              높은 결과를 보였습니다. 이 경우에도 불량 14장 중 4장은
+              미검출했습니다. 공개 데이터의 단일 분할 실험이므로 실제 검사
+              환경의 성능과 구분해 해석했습니다.
+            </p>
+            <p class="note">
+              산출물: 기본 CNN 실험 노트북, 학습 곡선·혼동행렬·오분류 분석, 4조
+              통합 발표자료. 
+            </p>
+          </section>
+</div><div class="project-study">          <section class="overview sql" id="chat-kdt">
+<h2>Chat-kdt · 제조 데이터 조회</h2>
+<p class="project-meta"><span><time datetime="2026-08-26">2026.08.26</time> – <time datetime="2026-08-29">2026.08.29</time></span><span>4인 팀</span><span>주제 제안 · MariaDB 시제품 · 평가 발표</span></p>
+<p class="key-contribution">주제 제안부터 MariaDB 기반 초기 시제품 구현, 평가 결과 발표까지 참여했습니다.</p>
+<p>SQL을 모르는 사용자도 미리 가공된 자료에만 의존하지 않고, 필요한 정보를 자연어로 질문해 조회할 수 있도록 기획한 팀 프로젝트입니다.</p>
+<h3>담당 역할</h3>
+<div class="text-rows">
+<section class="text-row"><h3>주제 제안·기획</h3><p>제조 데이터를 자연어로 조회하는 프로젝트를 제안했습니다. 강사님과 구현 방향을 논의하고, 내용을 팀에 공유해 진행 범위를 협의했습니다.</p></section>
+<section class="text-row"><h3>초기 시제품 구현</h3><p>MariaDB에 스키마와 테이블을 구성하고, 질문과 스키마 정보를 바탕으로 SQL을 생성해 DB 조회 결과를 Streamlit에 표시하는 흐름을 구현했습니다.</p></section>
+<section class="text-row"><h3>평가 결과 발표</h3><p>팀의 모델 단독 결과와 규칙 기반 대체 처리를 포함한 최종 프로그램의 평가 결과를 정리해 발표했습니다.</p></section>
+</div>
+<h3>초기 시제품과 팀 최종본</h3>
+<div class="text-rows">
+<section class="text-row"><h3>개인 시제품 · MariaDB</h3><p>설비 데이터의 단일 테이블을 대상으로 자연어 질문 → SQL 생성 → DB 조회 → Streamlit 출력 흐름을 구성했습니다. 조회 흐름은 구현했지만, 다양한 질문과 DB 구조에 대응하기 위한 추가 학습이 필요했습니다.</p></section>
+<section class="text-row"><h3>팀 최종본 · SQLite</h3><p>부품·공장·생산·품질·재고·설비의 6개 테이블을 대상으로 조회하는 시스템입니다. pko-T5-small 학습과 읽기 전용 SQL 검사, 규칙 기반 대체 처리(Fallback)를 포함했습니다.</p></section>
+</div>
+<p class="small">질문과 스키마를 함께 해석하는 방식을 목표로 했으며, 새로운 데이터베이스 구조에 대한 범용성은 검증하지 않았습니다.</p>
+<figure class="demo-figure">
+              <a
+                href="../assets/chat-kdt-demo.png"
+                aria-label="Chat-kdt 조회 결과 화면 크게 보기"
+                ><img
+                  src="../assets/chat-kdt-demo.png"
+                  alt="불량률이 가장 높은 부품 5개를 묻는 한국어 질문에 부품명과 불량률 표를 표시한 Chat-kdt 시연 화면"
+                  loading="lazy"
+                  width="1093"
+                  height="697"
+              /></a>
+              <figcaption>
+                팀 최종본 · SQLite 데이터베이스 조회
+                결과
+              </figcaption>
+            </figure>
+<h3>팀 평가 결과</h3>
+<p>발표자료의 내부 시험 질문 44개에서 모델 단독 조회 결과는 <strong>36/44개 일치(81.8%)</strong>로 기록됐습니다. 규칙 기반 대체 처리를 포함한 최종 프로그램은 44/44개가 일치했습니다.</p>
+<p class="note">최종 프로그램은 지원 질문에 대해 규칙 SQL로 결과를 비교하고 대체하는 구조입니다. 44/44는 내부 시험 범위의 결과이며, 모델 자체의 정확도나 새로운 질문 전반에 대한 성능을 의미하지 않습니다.</p>
+<details><summary>모델·프로그램 평가 비교</summary><div class="table-wrap"><table><caption>내부 시험 질문 44개 · 발표자료 기준</caption><thead><tr><th scope="col">평가 항목</th><th scope="col">모델 단독</th><th scope="col">대체 처리 포함 프로그램</th></tr></thead><tbody><tr><th scope="row">SQL 일치</th><td>36/44</td><td>40/44</td></tr><tr><th scope="row">SQL 실행 가능</th><td>43/44</td><td>44/44</td></tr><tr><th scope="row">조회 결과 일치</th><td>36/44</td><td>44/44</td></tr></tbody></table></div></details>
+<details>
+              <summary>데이터와 학습 구성</summary>
+              <dl class="work-log">
+                <dt>학습 데이터</dt>
+                <dd>
+                  일반 Text-to-SQL 6,000개로 1차 파인튜닝했습니다. 제조업
+                  질문·SQL 원본 220개는 학습 132개, 검증 44개, 시험 44개로
+                  나누고, 학습 질문을 1,323개 표현으로 확장해 2차
+                  파인튜닝했습니다.
+                </dd>
+                <dt>입력과 SQL 점검</dt>
+                <dd>
+                  질문과 DB 스키마를 함께 입력하도록 형식을 맞췄습니다. 정답
+                  SQL의 실행 가능 여부와 테이블·열 참조를 확인하고, SELECT문을
+                  유지하도록 구성했습니다.
+                </dd>
+                <dt>시연 데이터베이스</dt>
+                <dd>
+                  SQLite 6개 테이블, 총 19,771건입니다. AI4I 공개 합성 설비
+                  데이터 10,000건과 프로젝트 시연용 생산·품질·재고 등 가상
+                  데이터 9,771건으로 구성했습니다.
+                </dd>
+              </dl>
+            </details>
+<h3>결과와 다음 단계</h3><p>자연어로 데이터를 조회하는 아이디어를 DB와 화면이 연결된 초기 시제품으로 구체화했습니다. 팀 최종본의 평가에서는 SQL이 실행되는 것과 질문에 맞는 결과를 반환하는 것을 구분해 설명했습니다.</p><p>향후에는 기존 규칙과 분리된 정답 기준으로 새로운 질문을 평가하고, 다른 스키마에서도 테이블·열을 올바르게 선택하는지 검증할 필요가 있습니다.</p>
+</section>
+</div><a class="back" href="index.html">THN 포트폴리오 요약으로</a></article><footer>손성욱 · THN 지원 포트폴리오</footer></main></div><script src="../portfolio.js" defer></script></body></html>

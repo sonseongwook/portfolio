@@ -1,0 +1,126 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1">
+<title>전동화 조립 공법 자동화 | 손성욱 · THN 지원 포트폴리오</title>
+<meta name="description" content="THN 기업 연계 프로젝트. 손성욱의 DB 구현안 작성·구축, GUI 개발과 현업 피드백 반영 과정.">
+<link rel="icon" href="../favicon.svg">
+<link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css">
+<link rel="stylesheet" href="../portfolio.css"><link rel="stylesheet" href="../enterprise.css"><link rel="stylesheet" href="detail.css"></head>
+<body><a class="skip" href="#content">본문으로 이동</a><div class="shell"><aside class="profile">
+        <a class="identity" href="index.html"><strong>손성욱</strong><span>THN 지원 포트폴리오</span></a>
+        <div class="profile-info">
+          <p>경북대학교<br />생물산업기계공학 전공</p>
+          <p>KDT 15기<br />AI·빅데이터 교육</p>
+        </div>
+        <nav aria-label="프로젝트">
+          <a href="index.html">포트폴리오 요약</a>
+          <a href="apple.html">사과수확 보조 로봇</a>
+          <a href="process.html">벼 건조·저장시설</a>
+          <a href="enterprise.html" aria-current="page">전동화 조립 공법 자동화</a>
+          <a href="education.html">AI·빅데이터 프로젝트</a>
+        </nav>
+      </aside><main id="content"><article id="enterprise" class="case-study">
+    <header class="hero page-intro" id="top">
+      <p class="eyebrow">기업 연계 프로젝트 · THN</p>
+      <h1>전동화 조립을 위한<br>3D 기반 공법 자동화 프로그램 개발</h1>
+      <p class="hero-summary">3D CAD 데이터로 조립 순서를 검토하고<br class="desktop-break"> 작업 안내 영상을 만드는 프로그램</p>
+      <p class="hero-role">DB 구현안을 작성하고 DB·GUI를 개발했습니다.<br class="desktop-break"> 프로젝트 저장·복원, 부품 선택과 조립 순서 편집을 담당했습니다.</p>
+      <dl class="metadata">
+        <div><dt>기간</dt><dd>2026.10.01 – 2026.11.06</dd></div>
+        <div><dt>구성</dt><dd>4인 팀 · KDT 기업 연계 프로젝트</dd></div>
+        <div><dt>연계</dt><dd>THN 기술지원본부 PILOT개발팀</dd></div>
+        <div><dt>담당</dt><dd>DB 설계·구축 / GUI 개발 / 검증 자료·발표</dd></div>
+      </dl>
+      <div class="hero-actions"><a class="button primary" href="#demo">프로그램 시연 보기 <span>↓</span></a><a class="button" href="#contribution">담당 역할 보기 <span>↓</span></a></div>
+      <figure class="hero-figure">
+        <img src="../assets/thn-sequence-confirmed.jpg" width="2000" height="1200" alt="완제품 모델과 조립 순서 카드가 표시된 프로그램의 순서 확정 화면">
+        
+      </figure>
+    </header>
+
+    <nav class="section-nav" aria-label="페이지 목차"><a href="#problem">문제와 목표</a><a href="#flow">전체 구조</a><a href="#contribution">DB·GUI 구현</a><a href="#decisions">개선 과정</a><a href="#demo">시연·결과</a></nav>
+
+    <section id="problem" class="section">
+      <div class="section-heading"><span class="section-number">01</span><div><p class="eyebrow">개발 배경</p><h2>개발 배경과 목표</h2></div></div>
+      <p class="lead">PILOT개발팀에서는 3D 도면을 받아 조립 가능 여부와 순서를 검토한 뒤, 작업자에게 보여 줄 동적 공법 영상을 제작했습니다. 조립 순서가 바뀌면 검토와 영상 편집을 다시 해야 했습니다. 이 반복 작업을 줄이기 위해 순서 생성·편집·영상 출력을 한 프로그램에서 처리하도록 개발했습니다.</p>
+      <div class="before-after">
+        <div><h3>기존 업무</h3><ul><li>경험에 의존해 조립 순서를 판단</li><li>순서 변경 시 조립 가능 여부를 다시 검토</li><li>조립 장면과 작업 정보를 수작업으로 편집</li><li>순서·검토 이력을 개인별로 관리</li></ul></div>
+        <div><h3>개발 목표</h3><ul><li>3D 형상 기반의 조립 순서 초안 생성</li><li>부품·방향별 CAD 검사로 조립 가능 여부 확인</li><li>확정 순서를 반영한 동적 공법 영상 생성</li><li>프로젝트와 작업 이력을 저장해 재사용</li></ul></div>
+      </div>
+    </section>
+
+    <section id="flow" class="section">
+      <div class="section-heading"><span class="section-number">02</span><div><p class="eyebrow">팀 전체 구현</p><h2>프로그램 전체 구조</h2></div></div>
+      <ol class="workflow">
+        <li><span>01 · 사용자 입력</span><h3>프로젝트 생성</h3><p>차종·품종·프로젝트명 설정<br>완제품·부품 STEP 파일 등록</p></li>
+        <li><span>02 · 자동 처리</span><h3>순서 생성·검사</h3><p>형상 분석과 조립 단위 구성<br>분해 순서·방향을 조립 초안으로 변환</p></li>
+        <li class="owned-step"><span>03 · 사용자 판단</span><h3>검토·편집·확정</h3><strong class="owned-label">담당 · GUI 개발</strong><p>부품 선택·조립 순서 편집<br>단계별 재생·화면 전환</p></li>
+        <li><span>04 · 자동 처리</span><h3>영상 생성</h3><p>확정 순서와 작업 정보를 합성<br>동적 공법 영상 MP4 출력</p></li>
+      </ol>
+      <div class="system-support"><p><strong>AI 추천</strong><span>부품·방향의 검사 우선순위를 제안하고, CAD 기반 검사로 실제 통과 여부를 확인합니다.</span></p><p class="owned-support"><strong>담당 · DB·이력 관리</strong><span>각 단계의 프로젝트·확정 순서·작업 이력을 연결해 작업 복원과 데이터 재사용을 지원합니다.</span></p></div>
+    </section>
+
+    <section id="contribution" class="section">
+      <div class="section-heading"><span class="section-number">03</span><div><p class="eyebrow">담당 업무 · DB</p><h2>DB 구현안 작성과 구축</h2></div></div>
+      <p class="lead">프로젝트·부품·확정 조립 순서·작업 및 학습 이력을 관리할 DB 구현안을 작성하고, 이를 바탕으로 DB를 구축했습니다. STEP·MP4·모델 파일은 로컬 폴더에 저장하고 DB에는 파일 경로와 관련 정보를 기록했습니다.</p>
+      <div class="db-diagram" aria-label="로컬 파일을 DB 경로와 연결해 운영 및 AI 학습에 활용하는 구조">
+        <div class="db-files"><span class="diagram-label">LOCAL FILES</span><h3>로컬 폴더</h3><p>STEP · MP4 · 모델 파일</p></div>
+        <div class="diagram-arrow">파일 경로 참조 <span aria-hidden="true">↓</span></div>
+        <div class="db-core"><span class="diagram-label">DATABASE · 직접 설계·구축</span><h3>DB 저장·관리</h3><p>파일 경로 · 프로젝트 · 부품 정보<br>확정 순서 · 작업 및 학습 이력</p></div>
+        <div class="db-branches"><div><span class="diagram-label">운영 활용</span><h3>작업 복원·편집</h3><p>작업 복원 · 편집 · 영상 생성</p></div><div><span class="diagram-label">AI 학습 활용</span><h3>학습 데이터 재사용</h3><p>특징 · 확정 순서 · 방향</p></div></div>
+      </div>
+      <div class="implementation-list"><div><span>설계</span><p><b>저장 항목과 관계 정리</b>프로젝트별로 입력 파일, 부품 정보, 조립 순서와 이력을 구분하고 각 항목의 연결 관계를 구현안에 정리했습니다.</p></div><div><span>구축</span><p><b>DB와 파일 저장소 구성</b>SQLite와 SQLAlchemy로 프로젝트·분석 결과·조립 계획을 저장했습니다. STEP·형상 캐시·MP4는 로컬 파일로 관리하고 DB에서 참조하도록 구성했습니다.</p></div><div><span>활용</span><p><b>저장한 작업 불러오기</b>프로젝트를 다시 열면 저장한 부품 구성과 조립 순서를 불러옵니다. 사용자 확정본을 보관해 영상 생성과 학습용 데이터에 활용하도록 했습니다.</p></div></div>
+      <details><summary>주요 저장 항목 <span>＋</span></summary><div class="details-body table-wrap"><table><thead><tr><th>대상</th><th>저장 내용</th></tr></thead><tbody><tr><td>프로젝트·입력 파일</td><td>차종·품종·프로젝트명, 파일 해시·경로·역할</td></tr><tr><td>분석 결과</td><td>부품 그룹·구성 바디·접촉 관계를 분석 스냅샷에 연결</td></tr><tr><td>조립 계획</td><td>단계별 순서·이동 방향·거리·작업 안내</td></tr><tr><td>사용자 확정본</td><td>확정 시점의 계획을 JSON 스냅샷으로 보관</td></tr><tr><td>실제 파일</td><td>STEP·형상 캐시·MP4를 로컬 폴더에 저장하고 DB에서 참조</td></tr></tbody></table></div></details>
+      <p class="tech-line"><span>사용 기술</span>Python · SQLite · SQLAlchemy</p>
+    </section>
+
+    <section id="gui" class="section">
+      <div class="section-heading"><span class="section-number">04</span><div><p class="eyebrow">담당 업무 · GUI</p><h2>3D 뷰어와 조립 순서 편집 GUI</h2></div></div>
+      <p class="lead">프로그램 로직을 확인하며 3D 뷰어, 부품 정보와 조립 순서 편집 GUI를 개발했습니다. 부품을 선택하면 모델과 정보를 함께 확인하고, 순서를 수정한 뒤 단계별로 재생하며 검토할 수 있도록 구성했습니다.</p>
+      <figure class="project-figure"><img src="../assets/thn-sequence-editor.jpg" width="2000" height="1200" loading="lazy" alt="선택한 부품을 3D 모델에서 강조하고 우측에서 이동 방향과 거리를 수정하며 하단에서 조립 순서를 확인하는 GUI"></figure>
+      <div class="gui-features"><div><span>VIEW</span><h3>3D 모델·부품 정보</h3><p>목록에서 선택한 부품과 3D 모델의 표시를 연동하고, 해당 부품의 정보를 확인하도록 구성했습니다.</p></div><div><span>EDIT</span><h3>조립 순서 편집</h3><p>자동 생성된 초안을 순서 목록에 표시하고, 사용자가 순서와 작업 내용을 수정할 수 있도록 했습니다.</p></div><div><span>PLAY</span><h3>단계별 확인·화면 전환</h3><p>선택한 조립 단계의 움직임을 미리 보고, 편집·확정·영상 생성 화면으로 이동하는 동작을 구현했습니다.</p></div></div>
+      <p class="tech-line"><span>사용 기술</span>Python · PySide6 / Qt · VTK 연동</p>
+    </section>
+
+    <section id="decisions" class="section">
+      <div class="section-heading"><span class="section-number">05</span><div><p class="eyebrow">수정·보완</p><h2>예외 부품 처리와 현업 피드백 반영</h2></div></div>
+      <article class="decision"><div class="decision-title"><h3>LV 전선·락킹 부품의 예외 처리</h3></div><div class="decision-body">
+        <dl class="case-steps">
+          <div><dt>문제</dt><dd>유연한 LV 전선과 탄성으로 체결되는 락킹 부품은 강체 CAD의 간섭 검사만으로 실제 조립 가능 여부를 판단하기 어려웠습니다.</dd></div>
+          <div><dt>조치</dt><dd>부품 특성을 검토하고, 해당 부품을 자동 정밀 검사의 예외로 지정했습니다.</dd></div>
+          <div><dt>결과</dt><dd>자동 검사 대상과 별도 검토 대상을 구분해 사용자가 실제 조립 조건을 확인하도록 했습니다.</dd></div>
+        </dl>
+        <figure class="decision-figure"><img src="../assets/thn-lv-cont.jpg" width="2000" height="1200" loading="lazy" alt="부품 목록에서 LV CONT를 선택하고 예외 부품으로 지정하는 프로그램 화면"></figure>
+      </div></article>
+      <article class="decision"><div class="decision-title"><h3>기준 부품 누락·카메라 동작 수정</h3></div><div class="decision-body">
+        <dl class="case-steps">
+          <div><dt>문제</dt><dd>조립의 기준이 되는 부품이 순서 목록에서 빠져 전체 구성을 확인하기 어려웠습니다.</dd></div>
+          <div><dt>조치</dt><dd>기준 부품이 순서 목록에 표시되도록 수정하고, 목록·그룹화·분해 방향 관련 동작을 점검했습니다.</dd></div>
+          <div><dt>결과</dt><dd>기준 부품을 포함한 조립 순서를 목록에서 확인할 수 있도록 보완했습니다.</dd></div>
+        </dl>
+        <p>멘토 피드백에 따라 3D 뷰어의 360도 회전, 사용자 지정 카메라 기본값과 영상 템플릿도 개선했습니다.</p>
+      </div></article>
+      <article class="decision"><div class="decision-title"><h3>멘토링 기록과 수정본 확인</h3></div><div class="decision-body"><p>초기에는 현업에서 이 프로그램을 어떻게 쓰는지 몰라 개선할 항목의 우선순위를 정하기 어려웠습니다. 멘토에게 불편한 점과 수정이 필요한 이유를 묻고 회의록으로 남겼습니다. 피드백을 반영한 수정본도 수차례 보내 다시 확인받았습니다.</p><p>현장 방문에서는 제공받은 고전압 정션박스의 조립 우선순위와, 향후 다른 제품에 적용할 때 확인해야 할 조건도 질문하고 기록했습니다.</p></div></article>
+    </section>
+
+    <section id="validation" class="section">
+      <div class="section-heading"><span class="section-number">06</span><div><p class="eyebrow">검증 자료·발표</p><h2>AI 검증용 샘플 제작과 발표</h2></div></div>
+      <div class="validation-layout"><div><h3>검증용 파생 샘플 제작 <em>담당</em></h3><p>제공받은 고전압 정션박스(HVJB) 데이터로 파생 샘플을 제작했습니다. AI가 추천한 부품·방향 검사 우선순위의 성능을 검증하기 위한 자료였습니다.</p><p>AI가 검사 후보의 순위를 정하고 CAD 기반 검사에서 분해 가능 여부를 확인하는 원리를 공부했습니다.</p><h3 class="subheading">기술 정리·최종 발표 <em>담당</em></h3><p>최종 PPT 제작을 맡아 프로그램 구조와 시연·결과를 정리했습니다. 발표에서는 AI 추천, 영상 생성 기술, DB 저장 및 이력 관리를 설명했습니다. 개발 중에는 회의 내용과 테스트 오류, 개선 사항을 기록했습니다.</p></div><figure><img src="../assets/thn-sample-variant.png" width="1400" height="1100" loading="lazy" alt="조립 상태와 내부 부품 구성이 달라진 HVJB 파생 데이터 예시"></figure></div>
+      <details><summary>팀의 AI 적용 비교 결과 보기 <span>＋</span></summary><div class="details-body"><p>최종 발표자료에 제시한 팀의 비교 결과입니다. 모델 학습에는 파생 샘플 55개를 사용했습니다. 제 담당은 별도의 검증용 샘플 제작과 추천 원리·결과 발표였습니다.</p><div class="comparison-grid"><div><span>순서 생성 시간</span><p><b>147초</b><span>→</span><b>119초</b></p><strong>약 19% 감소</strong></div><div><span>경로 검사 횟수</span><p><b>24회</b><span>→</span><b>9회</b></p><strong>62.5% 감소</strong></div></div><p class="scope-note">시간은 발표자료에 표시된 반올림 값 기준입니다. 전체 업무시간 75% 단축과는 별도의 지표입니다.</p></div></details>
+    </section>
+
+    <section id="demo" class="section">
+      <div class="section-heading"><span class="section-number">07</span><div><p class="eyebrow">시연·성과</p><h2>프로그램 시연과 결과</h2></div></div>
+      <p class="lead">최종 발표에 사용한 시연 영상입니다. 프로젝트 생성부터 3D 모델 확인, 조립 순서 검토와 영상 생성까지 담았습니다.</p>
+      <figure class="video-figure"><video class="program-video" controls playsinline preload="none" poster="../assets/thn-sequence-confirmed.jpg" aria-label="기업 프로젝트 프로그램 전체 시연 영상"><source src="../assets/thn-program-demo.mp4" type="video/mp4">브라우저에서 영상을 재생할 수 없습니다. <a href="../assets/thn-program-demo.mp4">시연 영상 열기</a></video></figure>
+      <div class="outcome"><div class="outcome-number"><span>작업시간 비교</span><p><b>8</b>시간 <span>→</span> <b>2</b>시간</p><strong>약 75% 단축</strong></div><div class="outcome-description"><h3>팀의 작업시간 비교 결과</h3><p>현업 멘토의 실제 비교 확인에 따르면 작업시간이 기존 약 8시간에서 약 2시간으로 줄었습니다.</p><p>이 중 저는 작업 데이터를 저장·복원하는 DB와 검토·편집 GUI를 담당했습니다.</p><p class="scope-note">멘토가 확인한 비교 사례 기준이며, 제품에 따라 작업시간은 달라질 수 있습니다.</p></div></div>
+      <details><summary>생성된 동적 공법 영상 보기 <span>＋</span></summary><div class="details-body"><p>3D 조립 장면에 품번·작업 정보와 THN 양식을 결합한 출력 예시입니다.</p><video controls playsinline preload="none" poster="../assets/thn-video-example.png" aria-label="프로그램에서 생성된 동적 공법 영상 예시"><source src="../assets/thn-assembly-output.mp4" type="video/mp4">브라우저에서 영상을 재생할 수 없습니다. <a href="../assets/thn-assembly-output.mp4">출력 영상 열기</a></video></div></details>
+    </section>
+
+    <section id="next" class="section last-section">
+      <div class="section-heading"><span class="section-number">08</span><div><p class="eyebrow">한계·개선 방향</p><h2>적용 범위와 남은 과제</h2></div></div>
+      <div class="next-grid"><div><h3>이번 프로젝트의 범위</h3><p>제공받은 제품 데이터로 순서 생성·편집·영상 출력·저장을 구현했습니다. 다만 예외 부품은 사용자가 검토해야 하며, 형상이 복잡하면 계산시간이 길어집니다.</p></div><div><h3>이후 확인할 과제</h3><p>다른 제품에도 적용하려면 실제 데이터로 조립 조건과 처리시간을 더 확인해야 합니다. 예외 부품의 처리 기준을 정리하고, 복잡한 형상의 계산시간을 줄이는 것도 남은 과제입니다.</p></div></div>
+      <div class="project-retrospective"><h3>프로젝트를 마치며</h3><p>처음에는 오류가 나지 않으면 기능이 완성됐다고 생각했습니다. 멘토가 직접 사용하며 짚어 준 불편을 수정하면서, 어떤 순서로 확인하고 편집하는지가 개발 기준에 빠져 있었다는 점을 알게 됐습니다. 이후에는 수정 요청의 이유와 확인 결과도 함께 기록했습니다.</p></div>
+      <div class="closing-links"><a href="#top">맨 위로 ↑</a><a href="index.html">전체 프로젝트 보기 ↗</a></div>
+    </section>
+    </article><footer>손성욱 · THN 지원 포트폴리오</footer></main></div>
+<script src="../portfolio.js" defer></script><script src="../enterprise.js" defer></script></body></html>
