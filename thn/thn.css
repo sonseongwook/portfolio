@@ -5,8 +5,9 @@
 .technical-summary dt{font-weight:500}
 .technical-summary dd{margin:0;color:var(--muted);line-height:1.8}
 @media(max-width:700px){.technical-summary{margin-top:32px}.technical-summary h2{font-size:19px}.technical-summary dl>div{grid-template-columns:1fr;gap:3px;padding:12px 0;font-size:12px}}
-.index-heading .thn-introduction{max-width:760px;margin-top:16px;font-size:14px;line-height:1.9;color:#444b51}
-.project .project-copy>.work-connection{margin-top:14px;font-size:13px;line-height:1.75;color:var(--accent)}
-.work-connection>span{display:block;margin-bottom:3px;font-size:11px;font-weight:500;color:var(--muted)}
-.project .work-connection+.project-link{margin-top:16px}
-@media(max-width:700px){.index-heading .thn-introduction{font-size:13px;line-height:1.85}.project .project-copy>.work-connection{font-size:12px;margin-top:12px}.work-connection>span{font-size:10px}}
+.index-heading .thn-introduction{max-width:780px;margin-top:18px;font-size:16px;line-height:1.85}
+.thn-introduction p+p{margin-top:12px}
+.project .project-copy>.work-connection{margin-top:16px;font-size:15px;line-height:1.8;color:#3c515c}
+.work-connection>span{display:block;margin-bottom:5px;font-size:12px;font-weight:500;color:var(--accent)}
+.project .work-connection+.project-link{margin-top:18px}
+@media(max-width:700px){.index-heading .thn-introduction{font-size:15px;line-height:1.85}.project .project-copy>.work-connection{font-size:14px;margin-top:16px}.work-connection>span{font-size:12px}}
