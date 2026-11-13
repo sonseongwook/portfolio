@@ -33,9 +33,8 @@
       <div class="hero-actions"><a class="button primary" href="#demo">프로그램 시연 보기 <span>↓</span></a><a class="button" href="#contribution">담당 역할 보기 <span>↓</span></a></div>
       <figure class="hero-figure">
         <img src="assets/thn-program-overview.jpg" width="2000" height="1200" alt="프로그램의 부품 목록, 고전압 정션박스 3D 모델과 조립 순서 카드가 함께 표시된 화면">
-        <figcaption>시연 영상에서 캡처한 검토·편집 화면. 부품 목록과 3D 모델, 조립 순서를 함께 확인합니다.</figcaption>
+        
       </figure>
-      <div class="headline-result"><p><span class="eyebrow">팀 성과</span><strong>약 8시간 <span>→</span> 약 2시간</strong></p><p><b>작업시간 약 75% 단축</b><span>현업 멘토가 실제 비교 결과로 확인한 팀 성과</span></p></div>
     </header>
 
     <nav class="section-nav" aria-label="페이지 목차"><a href="#problem">문제와 목표</a><a href="#flow">전체 구조</a><a href="#contribution">DB·GUI 구현</a><a href="#decisions">개선 과정</a><a href="#demo">시연·결과</a></nav>
@@ -78,29 +77,29 @@
     <section id="gui" class="section">
       <div class="section-heading"><span class="section-number">04</span><div><p class="eyebrow">담당 업무 · GUI</p><h2>3D 뷰어와 조립 순서 편집 GUI</h2></div></div>
       <p class="lead">프로그램 로직을 확인하며 3D 뷰어, 부품 정보와 조립 순서 편집 GUI를 개발했습니다. 부품을 선택하면 모델과 정보를 함께 확인하고, 순서를 수정한 뒤 단계별로 재생하며 검토할 수 있도록 구성했습니다.</p>
-      <figure class="project-figure"><img src="assets/thn-sequence-editor.jpg" width="2000" height="1200" loading="lazy" alt="선택한 부품을 3D 모델에서 강조하고 우측에서 이동 방향과 거리를 수정하며 하단에서 조립 순서를 확인하는 GUI"><figcaption>조립 순서 편집 화면. 부품을 선택한 뒤 이동 방향·거리를 수정하고 움직임을 미리 봅니다.</figcaption></figure>
+      <figure class="project-figure"><img src="assets/thn-sequence-editor.jpg" width="2000" height="1200" loading="lazy" alt="선택한 부품을 3D 모델에서 강조하고 우측에서 이동 방향과 거리를 수정하며 하단에서 조립 순서를 확인하는 GUI"></figure>
       <div class="gui-features"><div><span>VIEW</span><h3>3D 모델·부품 정보</h3><p>목록에서 선택한 부품과 3D 모델의 표시를 연동하고, 해당 부품의 정보를 확인하도록 구성했습니다.</p></div><div><span>EDIT</span><h3>조립 순서 편집</h3><p>자동 생성된 초안을 순서 목록에 표시하고, 사용자가 순서와 작업 내용을 수정할 수 있도록 했습니다.</p></div><div><span>PLAY</span><h3>단계별 확인·화면 전환</h3><p>선택한 조립 단계의 움직임을 미리 보고, 편집·확정·영상 생성 화면으로 이동하는 동작을 구현했습니다.</p></div></div>
       <p class="tech-line"><span>사용 기술</span>Python · PySide6 / Qt · VTK 연동</p>
     </section>
 
     <section id="decisions" class="section">
       <div class="section-heading"><span class="section-number">05</span><div><p class="eyebrow">수정·보완</p><h2>예외 부품 처리와 현업 피드백 반영</h2></div></div>
-      <article class="decision"><div class="decision-title"><span>판단 01</span><h3>LV 전선·락킹 부품의 예외 처리</h3></div><div class="decision-body"><p>LV 전선과 락킹 부품은 형상만으로 실제 조립 과정을 판단하기 어려웠습니다. 전선의 유연성과 락킹 부품의 결합 방식을 고려하면 강체 모델을 이동시키는 검사만으로 처리하기에는 한계가 있었습니다.</p><p>해당 부품을 예외로 지정해 사용자가 별도로 검토하도록 프로그램에 적용했습니다.</p><figure class="decision-figure"><img src="assets/thn-exception-parts.png" width="1600" height="1200" loading="lazy" alt="고전압 정션박스 3D 모델에서 별도로 검토할 부품을 강조한 예시"><figcaption>최종 발표자료의 기준·예외 부품 선정 예시</figcaption></figure></div></article>
+      <article class="decision"><div class="decision-title"><span>판단 01</span><h3>LV 전선·락킹 부품의 예외 처리</h3></div><div class="decision-body"><p>LV 전선과 락킹 부품은 형상만으로 실제 조립 과정을 판단하기 어려웠습니다. 전선의 유연성과 락킹 부품의 결합 방식을 고려하면 강체 모델을 이동시키는 검사만으로 처리하기에는 한계가 있었습니다.</p><p>해당 부품을 예외로 지정해 사용자가 별도로 검토하도록 프로그램에 적용했습니다.</p><figure class="decision-figure"><img src="assets/thn-lv-cont.jpg" width="2000" height="1200" loading="lazy" alt="LV CONT 선택 시 전선과 연결 부품이 붉게 강조된 프로그램 화면"></figure></div></article>
       <article class="decision"><div class="decision-title"><span>개선 02</span><h3>기준 부품 누락·카메라 동작 수정</h3></div><div class="decision-body"><p>기준 부품이 조립 순서 목록에서 빠지는 문제를 수정했습니다. 부품 목록·그룹화·카메라 설정과 분해 방향 표시도 점검했습니다.</p><p>3D 뷰어의 360도 회전과 사용자 지정 카메라 기본값, 영상 템플릿을 개선했습니다.</p><p class="scope-note">수정 기록: 10/26 기준 부품 누락 · 10/27–29 뷰어·카메라·영상 템플릿</p></div></article>
       <article class="decision"><div class="decision-title"><span>협업 03</span><h3>멘토링 기록과 수정본 확인</h3></div><div class="decision-body"><p>초기에는 현업에서 이 프로그램을 어떻게 쓰는지 몰라 개선할 항목의 우선순위를 정하기 어려웠습니다. 멘토에게 불편한 점과 수정이 필요한 이유를 묻고 회의록으로 남겼습니다. 피드백을 반영한 수정본도 수차례 보내 다시 확인받았습니다.</p><p>현장 방문에서는 제공받은 고전압 정션박스의 조립 우선순위와, 향후 다른 제품에 적용할 때 확인해야 할 조건도 질문하고 기록했습니다.</p></div></article>
     </section>
 
     <section id="validation" class="section">
       <div class="section-heading"><span class="section-number">06</span><div><p class="eyebrow">검증 자료·발표</p><h2>AI 검증용 샘플 제작과 발표</h2></div></div>
-      <div class="validation-layout"><div><h3>검증용 파생 샘플 제작 <em>담당</em></h3><p>제공받은 고전압 정션박스(HVJB) 데이터로 파생 샘플을 제작했습니다. AI가 추천한 부품·방향 검사 우선순위의 성능을 검증하기 위한 자료였습니다.</p><p>AI가 검사 후보의 순위를 정하고 CAD 기반 검사에서 분해 가능 여부를 확인하는 원리를 공부했습니다.</p><h3 class="subheading">기술 정리·최종 발표 <em>담당</em></h3><p>최종 PPT 제작을 맡아 프로그램 구조와 시연·결과를 정리했습니다. 발표에서는 AI 추천, 영상 생성 기술, DB 저장 및 이력 관리를 설명했습니다. 개발 중에는 회의 내용과 테스트 오류, 개선 사항을 기록했습니다.</p></div><figure><img src="assets/thn-sample-variant.png" width="1400" height="1100" loading="lazy" alt="조립 상태와 내부 부품 구성이 달라진 HVJB 파생 데이터 예시"><figcaption>최종 발표자료의 파생 데이터 예시</figcaption></figure></div>
+      <div class="validation-layout"><div><h3>검증용 파생 샘플 제작 <em>담당</em></h3><p>제공받은 고전압 정션박스(HVJB) 데이터로 파생 샘플을 제작했습니다. AI가 추천한 부품·방향 검사 우선순위의 성능을 검증하기 위한 자료였습니다.</p><p>AI가 검사 후보의 순위를 정하고 CAD 기반 검사에서 분해 가능 여부를 확인하는 원리를 공부했습니다.</p><h3 class="subheading">기술 정리·최종 발표 <em>담당</em></h3><p>최종 PPT 제작을 맡아 프로그램 구조와 시연·결과를 정리했습니다. 발표에서는 AI 추천, 영상 생성 기술, DB 저장 및 이력 관리를 설명했습니다. 개발 중에는 회의 내용과 테스트 오류, 개선 사항을 기록했습니다.</p></div><figure><img src="assets/thn-sample-variant.png" width="1400" height="1100" loading="lazy" alt="조립 상태와 내부 부품 구성이 달라진 HVJB 파생 데이터 예시"></figure></div>
       <details><summary>팀의 AI 적용 비교 결과 보기 <span>＋</span></summary><div class="details-body"><p>최종 발표자료에 제시한 팀의 비교 결과입니다. 모델 학습에는 파생 샘플 55개를 사용했습니다. 제 담당은 별도의 검증용 샘플 제작과 추천 원리·결과 발표였습니다.</p><div class="comparison-grid"><div><span>순서 생성 시간</span><p><b>147초</b><span>→</span><b>119초</b></p><strong>약 19% 감소</strong></div><div><span>경로 검사 횟수</span><p><b>24회</b><span>→</span><b>9회</b></p><strong>62.5% 감소</strong></div></div><p class="scope-note">시간은 발표자료에 표시된 반올림 값 기준입니다. 전체 업무시간 75% 단축과는 별도의 지표입니다.</p></div></details>
     </section>
 
     <section id="demo" class="section">
       <div class="section-heading"><span class="section-number">07</span><div><p class="eyebrow">시연·성과</p><h2>프로그램 시연과 결과</h2></div></div>
       <p class="lead">최종 발표에 사용한 시연 영상입니다. 프로젝트 생성부터 3D 모델 확인, 조립 순서 검토와 영상 생성까지 담았습니다.</p>
-      <figure class="video-figure"><video class="program-video" controls playsinline preload="none" poster="assets/thn-program-overview.jpg" aria-label="기업 프로젝트 프로그램 전체 시연 영상"><source src="assets/thn-program-demo.mp4" type="video/mp4">브라우저에서 영상을 재생할 수 없습니다. <a href="assets/thn-program-demo.mp4">시연 영상 열기</a></video><figcaption>프로그램 전체 시연 · 1분 59초 · 최종 발표자료 수록 영상</figcaption></figure>
-      <div class="outcome"><div class="outcome-number"><span>작업시간 비교</span><p><b>8</b>시간 <span>→</span> <b>2</b>시간</p><strong>약 75% 단축</strong></div><div class="outcome-description"><h3>작업시간 약 75% 단축 · 팀 성과</h3><p>현업 멘토의 실제 비교 확인에 따르면 작업시간이 기존 약 8시간에서 약 2시간으로 줄었습니다.</p><p>이 중 저는 작업 데이터를 저장·복원하는 DB와 검토·편집 GUI를 담당했습니다.</p><p class="scope-note">멘토가 확인한 비교 사례 기준이며, 제품에 따라 작업시간은 달라질 수 있습니다.</p></div></div>
+      <figure class="video-figure"><video class="program-video" controls playsinline preload="none" poster="assets/thn-program-overview.jpg" aria-label="기업 프로젝트 프로그램 전체 시연 영상"><source src="assets/thn-program-demo.mp4" type="video/mp4">브라우저에서 영상을 재생할 수 없습니다. <a href="assets/thn-program-demo.mp4">시연 영상 열기</a></video></figure>
+      <div class="outcome"><div class="outcome-number"><span>작업시간 비교</span><p><b>8</b>시간 <span>→</span> <b>2</b>시간</p><strong>약 75% 단축</strong></div><div class="outcome-description"><h3>팀의 작업시간 비교 결과</h3><p>현업 멘토의 실제 비교 확인에 따르면 작업시간이 기존 약 8시간에서 약 2시간으로 줄었습니다.</p><p>이 중 저는 작업 데이터를 저장·복원하는 DB와 검토·편집 GUI를 담당했습니다.</p><p class="scope-note">멘토가 확인한 비교 사례 기준이며, 제품에 따라 작업시간은 달라질 수 있습니다.</p></div></div>
       <details><summary>생성된 동적 공법 영상 보기 <span>＋</span></summary><div class="details-body"><p>3D 조립 장면에 품번·작업 정보와 THN 양식을 결합한 출력 예시입니다.</p><video controls playsinline preload="none" poster="assets/thn-video-example.png" aria-label="프로그램에서 생성된 동적 공법 영상 예시"><source src="assets/thn-assembly-output.mp4" type="video/mp4">브라우저에서 영상을 재생할 수 없습니다. <a href="assets/thn-assembly-output.mp4">출력 영상 열기</a></video></div></details>
     </section>
 
