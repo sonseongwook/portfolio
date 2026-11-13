@@ -1,118 +1,14 @@
-<!doctype html>
-<html lang="ko">
-<head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
-<title>손성욱 | THN 지원 포트폴리오</title>
-<meta name="description" content="THN 기업 연계 전동화 조립 공법 자동화 프로그램(DB·GUI) 등 손성욱의 프로젝트.">
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans+KR:wght@400;500;600;700&display=swap" rel="stylesheet">
-<link rel="icon" href="../favicon.svg">
-<link rel="stylesheet" href="thn.css">
-</head>
-<body>
-<a class="skip" href="#content">본문으로 이동</a>
-
-<header>
-  <div class="bar">
-    <a class="me" href="#top">손성욱</a>
-    <nav aria-label="섹션">
-      <ul>
-        <li><a href="#enterprise">기업 프로젝트</a></li>
-        <li><a href="#mech">기구 설계</a></li>
-        <li><a href="#data">AI·데이터</a></li>
-        <li><a href="#process">공정 설계</a></li>
-        <li><a href="#skills">기술·자격</a></li>
-      </ul>
-    </nav>
-  </div>
-</header>
-
-<main id="content">
-  <div class="hero" id="top">
-    <h1>손성욱</h1>
-    <p class="role">THN 지원 포트폴리오 · 경북대학교 생물산업기계공학</p>
-    <p class="pitch">THN 기업 프로젝트에서 DB 구현안 작성·구축과 GUI 개발을 맡았습니다. 기구·공정 설계와 데이터 분석 프로젝트에도 참여했습니다.</p>
-    <div class="links">
-      <a href="https://github.com/sonseongwook">GitHub</a>
-    </div>
-  </div>
-
-  <section id="enterprise">
-    <h2>기업 프로젝트</h2>
-    <article class="proj">
-      <p class="meta">THN 기업 연계 · 2026.10.01–11.06 · 4인 팀</p>
-      <h3><a href="enterprise.html">전동화 조립을 위한 3D 기반 공법 자동화 프로그램 개발</a></h3>
-      <p>3D CAD로 정션박스 조립 순서를 검토하고, 확정한 순서로 동적 공법 영상을 만드는 프로그램입니다.</p>
-      <div class="big">
-        <strong>팀 작업시간 약 8시간 → 2시간 <small>약 75% 단축</small></strong>
-        <span>현업 멘토가 기존 방식과 실제 비교해 확인한 팀 성과</span>
-      </div>
-      <ul class="plain">
-        <li><b>DB</b>: 구현안 작성·구축. 로컬 파일의 경로와 프로젝트·확정 순서·작업 및 학습 이력을 연결해 저장·복원했습니다.</li>
-        <li><b>GUI</b>: 3D 뷰어, 부품 정보, 순서 편집 화면을 만들고 선택·재생·화면 전환을 연동했습니다.</li>
-        <li><b>검증·발표</b>: AI 검사 우선순위 추천 검증용 파생 샘플과 회의록·PPT를 작성하고, AI·영상·DB 파트를 발표했습니다.</li>
-      </ul>
-      <figure>
-        <a href="enterprise.html"><img src="../assets/thn-program-cover.jpg" alt="정션박스의 3D 조립 장면과 THN 공법 양식을 표시한 프로그램 화면" loading="lazy"></a>
-      </figure>
-      <p class="stack">Python · PySide6 / Qt · SQLite · SQLAlchemy</p>
-      <a class="more" href="enterprise.html">구현 과정과 시연 영상</a>
-    </article>
-  </section>
-
-  <section id="mech">
-    <h2>기구 설계</h2>
-    <article class="proj">
-      <p class="meta">캡스톤디자인, 2025.03–11, 7인 팀</p>
-      <h3><a href="apple.html">자율주행 사과 수확 보조 운반 및 선별 로봇</a></h3>
-      <p>빈 박스 회수·분배·컨베이어 재공급 구조를 제안했고, 팀 최종 출원 설계에 반영되어 <b>특허 출원 공동발명자</b>로 등재됐습니다. Inventor 컨베이어 초기 모델링과 2축 팬틸트·이송로봇 조립에 참여했습니다.</p>
-      <p class="note">팀 구현 범위: 주요 장치 제작·배치와 개별 구동 확인</p>
-      <a class="more" href="apple.html">설계안과 제작 범위</a>
-    </article>
-  </section>
-
-  <section id="data">
-    <h2>AI·데이터</h2>
-    <article class="proj" id="cable">
-      <p class="meta">2026.08.14–08.16 · 4인 팀 · 기본 CNN 실험·평가</p>
-      <h3><a href="education.html#cable">케이블 이미지 정상·불량 분류</a></h3>
-      <p>데이터 분할과 클래스 수를 점검하고 손실함수 가중치를 적용했습니다. 테스트 정확도는 77.19%였지만 불량 14장 중 <b>7장이 미검출</b>되어, 혼동행렬과 오분류 사례를 함께 분석했습니다.</p>
-      <a class="more" href="education.html#cable">데이터와 평가 결과</a>
-    </article>
-    <article class="proj" id="chat-kdt">
-      <p class="meta">2026.08.26–08.29 · 4인 팀 · 주제 제안·시제품·평가 발표</p>
-      <h3><a href="education.html#chat-kdt">Chat-kdt: 자연어로 제조 데이터 조회</a></h3>
-      <p>주제를 제안하고 MariaDB·Streamlit으로 자연어 질문 → SQL 생성 → 조회 시제품을 구현했습니다. 팀 최종본의 내부 시험 44개에서 조회 결과는 모델 단독 <b>36개</b>, 규칙 보완 포함 <b>44개</b>가 일치해 두 결과를 구분해 발표했습니다.</p>
-      <p class="note">개인 시제품: MariaDB · 팀 최종본: SQLite · 내부 시험 범위의 결과</p>
-      <a class="more" href="education.html#chat-kdt">시제품과 평가 범위</a>
-    </article>
-  </section>
-
-  <section id="process">
-    <h2>공정 설계</h2>
-    <article class="proj">
-      <p class="meta">2023.09–12, 6인 팀</p>
-      <h3><a href="process.html">벼 건조·저장시설(DSC) 공정 설계</a></h3>
-      <p>180ha·수확 기간 15일·초기 함수율 24% 조건으로 설비와 공정을 검토했습니다. 설비업체에 제원·사용 조건을 문의하고 기계·건물의 감가상각비를 계산해 팀 설계안에 반영했습니다.</p>
-      <a class="more" href="process.html">공정도와 비용 검토</a>
-    </article>
-  </section>
-
-  <section id="skills">
-    <h2>기술·자격</h2>
-    <dl class="skills">
-      <dt>Python</dt><dd>데이터 처리·시각화, 모델 학습·평가, DB·GUI 개발</dd>
-      <dt>DB · SQL</dt><dd>SQLite·SQLAlchemy 저장·복원, MariaDB 시제품 · SQL 기초 문법·쿼리 해석</dd>
-      <dt>PySide6</dt><dd>3D 뷰어·순서 편집 GUI</dd>
-      <dt>Inventor</dt><dd>컨베이어 초기 모델링 · 기초 수준</dd>
-      <dt>Excel · PPT</dt><dd>비용 계산, 회의록·발표자료</dd>
-      <dt>자격</dt><dd>SQLD · 컴퓨터활용능력 2급 취득<br>빅데이터분석기사 필기 합격 · 실기 준비 중</dd>
-    </dl>
-  </section>
-</main>
-
-<footer>손성욱 · THN 지원 포트폴리오 · 2026.11</footer>
-</body>
-</html>
+<!doctype html><html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><title>Projects | 손성욱 · THN 지원 포트폴리오</title><meta name="description" content="손성욱의 기구·공정 설계 및 데이터·AI 프로젝트 포트폴리오"><link rel="icon" href="../favicon.svg"><link rel="stylesheet" crossorigin href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"><link rel="stylesheet" href="../portfolio.css"><style>.index-heading h1{font-size:22px;line-height:1.4;font-weight:600;letter-spacing:-.02em}.index-heading+.project-list{margin-top:24px}</style><link rel="stylesheet" href="detail.css"><link rel="stylesheet" href="thn.css"></head><body><a class="skip" href="#content">본문으로 이동</a><div class="shell"><aside class="profile">
+        <a class="identity" href="index.html" aria-current="page"><strong>손성욱</strong><span>THN 지원 포트폴리오</span></a>
+        <div class="profile-info">
+          <p>경북대학교<br />생물산업기계공학 전공</p>
+          <p>KDT 15기<br />AI·빅데이터 교육</p>
+        </div>
+        <nav aria-label="프로젝트">
+          <a href="index.html" aria-current="page">포트폴리오 요약</a>
+          <a href="apple.html">사과수확 보조 로봇</a>
+          <a href="process.html">벼 건조·저장시설</a>
+          <a href="enterprise.html">전동화 조립 공법 자동화</a>
+          <a href="education.html">AI·빅데이터 프로젝트</a>
+        </nav>
+      </aside><main id="content"><header class="page-intro index-heading"><h1>Projects</h1></header><section class="project-list" aria-label="프로젝트 목록"><a class="project" href="enterprise.html"><div class="thumb"><img src="../assets/thn-program-cover.jpg" alt="조립 장면과 작업 정보를 THN 양식에 맞춰 표시한 프로그램의 영상 출력 화면" loading="lazy"></div><div class="project-copy"><p class="eyebrow">THN 기업 연계 · 2026.10.01–11.06</p><h2>전동화 조립을 위한<br>3D 기반 공법 자동화 프로그램</h2><p>DB 구현안 작성·구축, 3D 뷰어·조립 순서 편집 GUI 개발</p><p class="project-result">팀 성과 · 작업시간 약 8시간 → 2시간, 약 75% 단축</p><span class="project-link">프로젝트 보기 <span aria-hidden="true">↗</span></span></div></a><a class="project" href="apple.html"><div class="thumb"><img src="../assets/robot.webp" alt="자율주행 사과수확 보조 운반 및 선별 로봇 프로젝트 이미지" loading="lazy"></div><div class="project-copy"><p class="eyebrow">CAPSTONE DESIGN · 2025.03–2025.11</p><h2>자율주행 사과수확 보조<br>운반 및 선별 로봇</h2><p>빈 박스 회수·재공급 구조 제안, 초기 모델링과 기구 조립</p><p class="project-result">팀 특허 출원 · 주요 장치 개별 구동</p><span class="project-link">프로젝트 보기 <span aria-hidden="true">↗</span></span></div></a><a class="project" href="process.html"><div class="thumb"><img src="../assets/dsc-3d.webp" alt="벼 건조·저장시설 공정설계 프로젝트 이미지" loading="lazy"></div><div class="project-copy"><p class="eyebrow">PROCESS DESIGN · 2023년 2학기</p><h2>벼 건조·저장시설 공정설계</h2><p>처리 조건과 설비 구성 검토, 업체 문의와 감가상각비 계산</p><p class="project-result">교육용 시설 설계 · 공정 배치와 비용 검토</p><span class="project-link">프로젝트 보기 <span aria-hidden="true">↗</span></span></div></a><a class="project" href="education.html#cable"><div class="thumb"><img src="../assets/cable-defect.png" alt="케이블 이미지 정상·불량 분류 프로젝트 이미지" loading="lazy"></div><div class="project-copy"><p class="eyebrow">DATA / AI · 2026.08.14–08.16</p><h2>케이블 이미지 정상·불량 분류</h2><p>기본 CNN 실험, 데이터 분할과 학습 조건 점검</p><p class="project-result">개인 실험 · 혼동행렬과 불량 미검출 사례 분석</p><span class="project-link">프로젝트 보기 <span aria-hidden="true">↗</span></span></div></a><a class="project" href="education.html#chat-kdt"><div class="thumb"><img src="../assets/chat-kdt-demo.png" alt="Chat-kdt · 제조 데이터 조회 프로젝트 이미지" loading="lazy"></div><div class="project-copy"><p class="eyebrow">DATA / AI · 2026.08.26–08.29</p><h2>Chat-kdt · 제조 데이터 조회</h2><p>주제 제안·기획, MariaDB 시제품 구현과 평가 발표</p><p class="project-result">팀 결과 · 내부 시험 질문 44개 평가</p><span class="project-link">프로젝트 보기 <span aria-hidden="true">↗</span></span></div></a></section><section class="technical-summary" aria-labelledby="skills-title"><h2 id="skills-title">기술·자격</h2><dl><div><dt>Python</dt><dd>데이터 처리·시각화, 모델 학습·평가, DB·GUI 개발</dd></div><div><dt>DB · SQL</dt><dd>SQLite·SQLAlchemy 저장·복원, MariaDB 시제품 구현</dd></div><div><dt>PySide6 / Qt</dt><dd>3D 뷰어·부품 정보·조립 순서 편집 화면과 동작 연동</dd></div><div><dt>Inventor</dt><dd>컨베이어 초기 모델링</dd></div><div><dt>Excel · PowerPoint</dt><dd>설비·비용 자료 정리, 감가상각비 계산, 회의록·발표자료 제작</dd></div><div><dt>자격</dt><dd>SQLD · 컴퓨터활용능력 2급 취득<br>빅데이터분석기사 필기 합격 · 실기 준비 중</dd></div></dl></section><footer>손성욱 · THN 지원 포트폴리오</footer></main></div><script src="../portfolio.js" defer></script></body></html>
